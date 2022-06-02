@@ -1,11 +1,12 @@
 express= require("express")
 obj = express()
+const port = 8080;
 
-obj.get("/",function(req,res){
+
+obj.listen(port,function(){
     console.log("Server is started");
 })
-obj.listen(8080)
 
-obj.get("/deposit",function(req,res){
-    console.log("inside depositor");
+obj.get("/deposit",(req,res)=>{
+    res.send("inside depositor");
 })
